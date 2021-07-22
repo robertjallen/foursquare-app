@@ -13,7 +13,7 @@ export default function LegosList() {
     return (
         <div className="list">     
             {recipes &&
-            recipes.map(recipe => {
+            recipes.map((recipe) => {
               return  <RecipesCard recipe={recipe}/>
             }) 
             }

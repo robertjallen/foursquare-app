@@ -1,10 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { Button } from 'antd';
+import AddingredientsForm from './forms/AddingredientsForm';
 
 export default function RecipesCard({recipe}) {
+
+  const [visible, setVisible] = useState(true);
+  console.log(visible)
+
   return (
     <div className="card">
       <h3>{recipe.title}</h3>
-      <button>ingredients</button>
+      <Button
+      type="primary"
+      onClick={() => {
+        setVisible(false);
+      }}
+
+      >ingredients</Button>
+        <AddingredientsForm recipe={recipe} visible={visible} setVisible={setVisible}/>
+      
     </div>
   )
 }
