@@ -1,37 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
-import Home from './components/Home'
-import VenueDetails from './components/VenueDetails'
-import ogImage from './components/images/og.png'
-import Footer from './components/Footer'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import RecipesList from './components/RecipesList'
+import {RecipesContext} from './contexts/RecipesContext'
+import {Route} from 'react-router-dom'
 
+// import your actions
+import {fetch} from './actions/action.js'
+// import useSelector and useDispatch from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
-// library.add(fab, faCheckSquare, faCoffee)
+function App() {
+ // declare a variable for dispatch using useDispatch
+  const dispatch = useDispatch()
+  const recipes = useSelector(state => state)
 
-
-function App(props) {
-  
-  
+  useEffect(()=>{
+    dispatch(fetch())
+  },[])
 
   return (
     <div className="App">
+      <RecipesContext.Provider value={recipes}>
+        <Route exact path='/' render={props => <RecipesList {...props} /> }/>
+      </RecipesContext.Provider>
       
-
-      <img src={ogImage} style={{display: 'none'}}></img>
-
-      <Route 
-        exact path="/" 
-        render={props => <Home/>
-        }/>
-
-      <Route 
-        exact path="/venue" 
-        render={props => <VenueDetails {...props} /> } />
-        <Footer/>
     </div>
   );
 }
+
 export default App;
