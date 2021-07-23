@@ -13,6 +13,7 @@ function App() {
  // declare a variable for dispatch using useDispatch
   const dispatch = useDispatch()
   const recipes = useSelector(state => state)
+  console.log(recipes)
 
   useEffect(()=>{
     dispatch(fetch())

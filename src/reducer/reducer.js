@@ -1,7 +1,8 @@
 import {FETCH_SUCCESS, POST_SUCCESS} from '../actions/action'
 
 const initialState = {
-    recipes: []
+    recipes: [],
+    cart: []
 }
 
 export const reducer = (state = initialState, action) => {
@@ -15,7 +16,7 @@ export const reducer = (state = initialState, action) => {
         case POST_SUCCESS:
             return {
                 ...state,
-                recipes: [...action.payload]
+                cart: [...action.payload]
             }
 
         default:

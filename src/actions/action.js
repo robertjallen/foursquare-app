@@ -14,3 +14,9 @@ export const fetch = () => {
     }
 }
 
+
+export const post = (items) => {
+  return dispatch => {
+          dispatch({type: POST_SUCCESS, payload: items})
+      }
+  }
