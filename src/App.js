@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import RecipesList from './components/RecipesList'
+import RecipesList from './components/recipes/RecipesList'
+import CartList from './components/cart/CartList'
 import {RecipesContext} from './contexts/RecipesContext'
 import {Route} from 'react-router-dom'
 
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <RecipesContext.Provider value={recipes}>
         <Route exact path='/' render={props => <RecipesList {...props} /> }/>
+        <Route exact path='/cart' render={props => <CartList {...props} /> }/>
       </RecipesContext.Provider>
       
     </div>

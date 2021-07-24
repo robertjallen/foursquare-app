@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Button } from 'antd';
-import AddingredientsForm from './forms/AddingredientsForm';
+import AddingredientsForm from '../forms/AddingredientsForm';
 
 
 export default function RecipesCard({recipe}) {
@@ -13,7 +13,7 @@ export default function RecipesCard({recipe}) {
       onClick={() => {
         setVisible(false);
       }}
-      >ingredients</Button>
+      >ingredients &#9660;</Button>
         <AddingredientsForm recipe={recipe} visible={visible} setVisible={setVisible}/>
     </div>
   )

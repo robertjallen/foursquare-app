@@ -54,6 +54,8 @@ li{
   margin-left: 10%;
   margin-bottom: 15px;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
 }
 
 .card {

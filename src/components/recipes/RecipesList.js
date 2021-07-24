@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {RecipesContext} from '../contexts/RecipesContext'
+import {RecipesContext} from '../../contexts/RecipesContext'
 import RecipesCard from './RecipesCard'
 
 export default function RecipesList() {
