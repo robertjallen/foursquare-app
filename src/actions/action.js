@@ -1,7 +1,7 @@
 import axios from 'axios'
 export const FETCH_SUCCESS = "FETCH_SUCCESS"
 export const POST_SUCCESS = "POST_SUCCESS"
-export const REMOVE_FEATURE = "REMOVE_FEATURE"
+export const REMOVE_ITEM = "REMOVE_ITEM"
 
 // fetch
 export const fetch = () => {
@@ -22,6 +22,6 @@ export const post = (items) => {
       }
   }
 
-export const removeFeature = (item) => {
-    return {type: REMOVE_FEATURE, payload: item}
+export const remove = (item) => {
+    return {type: REMOVE_ITEM, payload: item}
 }  

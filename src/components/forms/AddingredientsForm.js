@@ -37,16 +37,15 @@ export default function AddingredientsForm({recipe, visible, setVisible}) {
 
   return (
     <form onSubmit={handleSubmit} className={visible ? "hidden" : "visible"}>
-     modal
-     {recipe.id}
+     ADD TO CART
      <br/>
      {recipe.extendedIngredients.map((item, id) => {
         return <li className="list-item" key={id}>
                   <p>{item.name}</p>
-                  <p onClick={() => handleChange(item)} value={item} name="value">X</p>
+                  <p className="button add" onClick={() => handleChange(item)} value={item} name="value">+</p>
               </li> 
       })}
-      <button type="submit">add to cart</button>
+      <button className="button" type="submit">add to cart</button>
     </form>
   )
 }

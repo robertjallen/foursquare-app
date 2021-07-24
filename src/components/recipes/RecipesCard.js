@@ -9,6 +9,7 @@ export default function RecipesCard({recipe}) {
     <div className="card">
       <h3>{recipe.title}</h3>
       <Button
+      className="button"
       type="primary"
       onClick={() => {
         setVisible(false);

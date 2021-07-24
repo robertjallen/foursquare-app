@@ -1,4 +1,4 @@
-import {FETCH_SUCCESS, POST_SUCCESS, REMOVE_FEATURE} from '../actions/action'
+import {FETCH_SUCCESS, POST_SUCCESS, REMOVE_ITEM} from '../actions/action'
 
 const initialState = {
     recipes: [],
@@ -18,16 +18,12 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 cart: [...action.payload]
             }
-        case REMOVE_FEATURE:
+        case REMOVE_ITEM:
                 return {
                     ...state,
-                    cart: {
-                        ...state.cart, 
-                        cart: state.cart.filter((item)=>{
-                            return item.id !== action.payload.id
-                        })
-                    },
-                    cart: [...state.cart, action.payload]
+                    cart: state.cart.filter((item)=>{
+                        return item.id !== action.payload.id
+                    })
                 }    
 
         default:

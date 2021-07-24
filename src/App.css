@@ -44,6 +44,24 @@
   margin: 0 auto;
 }
 
+.button {
+  background: hotpink;
+  border: 1px solid transparent;
+  color: white;
+  margin-right: 1em;
+  padding: .25em .75em;
+  transition: all .25s ease-in;
+}
+.button:hover{
+  background: white;
+  border: 1px solid hotpink;
+  color: #333;
+}
+.add{
+  background: rgb(9, 148, 118);
+  align-content: center;
+}
+
 .hidden{
   display:none;
 }
@@ -52,10 +70,10 @@ li{
   list-style-type: none;
   text-align: left;
   margin-left: 10%;
-  margin-bottom: 15px;
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .card {
