@@ -18,6 +18,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 cart: [...action.payload]
             }
+            console.log(state.cart)
         case REMOVE_ITEM:
                 return {
                     ...state,

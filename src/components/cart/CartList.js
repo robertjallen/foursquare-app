@@ -1,5 +1,4 @@
 import React from 'react'
-import {RecipesContext} from '../../contexts/RecipesContext'
 import { useHistory } from 'react-router-dom';
 import {remove} from '../../actions/action';
 // import useSelector and useDispatch from 'react-redux'
@@ -22,12 +21,14 @@ export default function CartList() {
 
   return (
     <div className="card">
-      <h1>Cart Checkout</h1>
+      <div className="card-header">
+        <h1>Cart Checkout</h1>
+        <button className="button" onClick={() => handleHome()}>HOME</button>
+      </div>
+      <hr/>
       {cart.map((item, index) => {
         return <li key={index}>{item.name} <button className="button" onClick={() => handleDelete(item)}>remove item</button></li>
       })}
-
-      <button className="button" onClick={() => handleHome()}>HOME</button>
     </div>
   )
 }
