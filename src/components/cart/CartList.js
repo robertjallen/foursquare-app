@@ -9,7 +9,6 @@ export default function CartList() {
   const cart = useSelector(state => state.cart)
   const history = useHistory();
   const dispatch = useDispatch()
-  console.log(cart)
 
   const handleHome = () => {
     history.push('/')

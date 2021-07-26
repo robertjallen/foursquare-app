@@ -2,7 +2,8 @@ import {FETCH_SUCCESS, POST_SUCCESS, REMOVE_ITEM} from '../actions/action'
 
 const initialState = {
     recipes: [],
-    cart: []
+    cart: [],
+    isLoading: false
 }
 
 export const reducer = (state = initialState, action) => {
@@ -10,7 +11,8 @@ export const reducer = (state = initialState, action) => {
         case FETCH_SUCCESS:
             return{
                 ...state,
-                recipes: [...action.payload]
+                recipes: [...action.payload],
+                isLoading: true
             }
 
         case POST_SUCCESS:
