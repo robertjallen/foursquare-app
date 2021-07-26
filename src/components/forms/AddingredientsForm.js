@@ -16,7 +16,6 @@ export default function AddingredientsForm({recipe}) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(newItems)
     dispatch(post(newItems))
     history.push('/cart')
   }
