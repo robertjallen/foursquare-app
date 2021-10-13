@@ -36,11 +36,14 @@ function App() {
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
+        <div>
+          <h1>cuisine</h1>
         <select name={cuisine} onChange={handleSelectChanges}>
           {cuisines.map(c => {
             return <option value={c}>{c}</option>
           })}
         </select>
+        </div>  
         <button type="submit">Submit</button>
       </form>
       

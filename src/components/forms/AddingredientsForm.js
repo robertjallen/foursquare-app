@@ -20,7 +20,6 @@ export default function AddingredientsForm({recipe}) {
     history.push('/cart')
   }
 
-
   return (
     <form onSubmit={handleSubmit} >
      <hr/>
